@@ -1,0 +1,39 @@
+{
+  "name": "ecommercial-server",
+  "version": "1.0.0",
+  "description": "api server for nodejs e-commercial app",
+  "main": "index.js",
+  "author": "Nguyen Duy Tan",
+  "license": "MIT",
+  "scripts": {
+    "start:test": "echo \"Error: no test specified\" && exit 1",
+    "start:production": "yarn run build && node ./build/src/index.js",
+    "start:dev": "nodemon --exec ./node_modules/.bin/babel-node ./src/index.js",
+    "build:clean": "rm -rf build && mkdir build",
+    "build:babel": "babel ./src -d ./build/src",
+    "build": "yarn run build:clean && yarn run build:babel"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.5",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.1",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.2",
+    "redis": "3.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/node": "^7.16.5",
+    "@babel/plugin-transform-runtime": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "nodemon": "^2.0.15"
+  }
+}
